@@ -2,7 +2,14 @@ import React from "react";
 import { algo, cairn } from "../../assets";
 import Styles from "./Login.module.scss";
 
-function Login({ user, setUser, login, error }) {
+function Login({
+  user,
+  setUser,
+  login,
+  error,
+  passwordVisible,
+  setPasswordVisible,
+}) {
   return (
     <div className={Styles.Login_Container}>
       <div className={Styles.Left}>
@@ -33,11 +40,26 @@ function Login({ user, setUser, login, error }) {
           <label>
             Password
             <input
-              type="text"
+              type={passwordVisible ? "text" : "password"}
               placeholder="Password"
               value={user.password}
               onChange={(e) => setUser({ ...user, password: e.target.value })}
             />
+          </label>
+          <label
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "row",
+            }}
+          >
+            <input
+              checked={passwordVisible}
+              onChange={(e) => setPasswordVisible(e.target.checked)}
+              type="checkbox"
+              style={{ marginRight: "0.5rem" }}
+            />{" "}
+            Show Password
           </label>
           {error?.visible && (
             <div className={Styles.Error}>
