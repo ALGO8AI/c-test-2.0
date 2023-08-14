@@ -66,11 +66,11 @@ function Home({ actveLink, currentTab, setCurrrentTab, logOut }) {
                 }}
                 series={[
                   {
-                    name: "series1",
+                    name: "Well 1",
                     data: [31, 40, 28, 51, 42, 109, 100],
                   },
                   {
-                    name: "series2",
+                    name: "Well 2",
                     data: [11, 32, 45, 32, 34, 52, 41],
                   },
                 ]}
@@ -85,7 +85,7 @@ function Home({ actveLink, currentTab, setCurrrentTab, logOut }) {
                   chart: {
                     type: "pie",
                   },
-                  labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+                  labels: ["Well A", "Well B", "Well C", "Well D", "Well E"],
                   responsive: [
                     {
                       breakpoint: 480,
@@ -148,24 +148,24 @@ function Home({ actveLink, currentTab, setCurrrentTab, logOut }) {
                 }}
                 series={[
                   {
-                    name: "Bob",
+                    name: "Input",
                     data: [
                       {
-                        x: "Design",
+                        x: "Well A",
                         y: [
                           new Date("2019-03-05").getTime(),
                           new Date("2019-03-08").getTime(),
                         ],
                       },
                       {
-                        x: "Code",
+                        x: "Well B",
                         y: [
                           new Date("2019-03-08").getTime(),
                           new Date("2019-03-11").getTime(),
                         ],
                       },
                       {
-                        x: "Test",
+                        x: "Well C",
                         y: [
                           new Date("2019-03-11").getTime(),
                           new Date("2019-03-16").getTime(),
@@ -174,24 +174,24 @@ function Home({ actveLink, currentTab, setCurrrentTab, logOut }) {
                     ],
                   },
                   {
-                    name: "Joe",
+                    name: "Output",
                     data: [
                       {
-                        x: "Design",
+                        x: "Well A",
                         y: [
                           new Date("2019-03-02").getTime(),
                           new Date("2019-03-05").getTime(),
                         ],
                       },
                       {
-                        x: "Code",
+                        x: "Well B",
                         y: [
                           new Date("2019-03-06").getTime(),
                           new Date("2019-03-09").getTime(),
                         ],
                       },
                       {
-                        x: "Test",
+                        x: "Well C",
                         y: [
                           new Date("2019-03-10").getTime(),
                           new Date("2019-03-19").getTime(),
@@ -257,15 +257,15 @@ function Home({ actveLink, currentTab, setCurrrentTab, logOut }) {
                 }}
                 series={[
                   {
-                    name: "Net Profit",
+                    name: "Input",
                     data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
                   },
                   {
-                    name: "Revenue",
+                    name: "Output",
                     data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
                   },
                   {
-                    name: "Free Cash Flow",
+                    name: "Efficiency",
                     data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
                   },
                 ]}
@@ -280,6 +280,7 @@ function Home({ actveLink, currentTab, setCurrrentTab, logOut }) {
                   chart: {
                     type: "polarArea",
                   },
+                  labels: ["Well A", "Well B", "Well C", "Well D", "Well E"],
                   stroke: {
                     colors: ["#fff"],
                   },
@@ -342,11 +343,11 @@ function Home({ actveLink, currentTab, setCurrrentTab, logOut }) {
                 }}
                 series={[
                   {
-                    name: "series1",
+                    name: "Well 1",
                     data: [31, 40, 28, 51, 42, 109, 100],
                   },
                   {
-                    name: "series2",
+                    name: "Well 2",
                     data: [11, 32, 45, 32, 34, 52, 41],
                   },
                 ]}
@@ -361,7 +362,7 @@ function Home({ actveLink, currentTab, setCurrrentTab, logOut }) {
                   chart: {
                     type: "pie",
                   },
-                  labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+                  labels: ["Well A", "Well B", "Well C", "Well D", "Well E"],
                   responsive: [
                     {
                       breakpoint: 480,
@@ -424,24 +425,24 @@ function Home({ actveLink, currentTab, setCurrrentTab, logOut }) {
                 }}
                 series={[
                   {
-                    name: "Bob",
+                    name: "Input",
                     data: [
                       {
-                        x: "Design",
+                        x: "Well A",
                         y: [
                           new Date("2019-03-05").getTime(),
                           new Date("2019-03-08").getTime(),
                         ],
                       },
                       {
-                        x: "Code",
+                        x: "Well B",
                         y: [
                           new Date("2019-03-08").getTime(),
                           new Date("2019-03-11").getTime(),
                         ],
                       },
                       {
-                        x: "Test",
+                        x: "Well C",
                         y: [
                           new Date("2019-03-11").getTime(),
                           new Date("2019-03-16").getTime(),
@@ -450,24 +451,24 @@ function Home({ actveLink, currentTab, setCurrrentTab, logOut }) {
                     ],
                   },
                   {
-                    name: "Joe",
+                    name: "Output",
                     data: [
                       {
-                        x: "Design",
+                        x: "Well A",
                         y: [
                           new Date("2019-03-02").getTime(),
                           new Date("2019-03-05").getTime(),
                         ],
                       },
                       {
-                        x: "Code",
+                        x: "Well B",
                         y: [
                           new Date("2019-03-06").getTime(),
                           new Date("2019-03-09").getTime(),
                         ],
                       },
                       {
-                        x: "Test",
+                        x: "Well C",
                         y: [
                           new Date("2019-03-10").getTime(),
                           new Date("2019-03-19").getTime(),
@@ -533,15 +534,15 @@ function Home({ actveLink, currentTab, setCurrrentTab, logOut }) {
                 }}
                 series={[
                   {
-                    name: "Net Profit",
+                    name: "Input",
                     data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
                   },
                   {
-                    name: "Revenue",
+                    name: "Output",
                     data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
                   },
                   {
-                    name: "Free Cash Flow",
+                    name: "Efficiency",
                     data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
                   },
                 ]}
@@ -556,6 +557,8 @@ function Home({ actveLink, currentTab, setCurrrentTab, logOut }) {
                   chart: {
                     type: "polarArea",
                   },
+                  labels: ["Well A", "Well B", "Well C", "Well D", "Well E"],
+
                   stroke: {
                     colors: ["#fff"],
                   },

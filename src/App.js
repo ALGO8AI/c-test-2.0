@@ -70,36 +70,33 @@ function App() {
   };
 
   const login = async () => {
-    if (!user.email.trim("")) {
-      return CheckError("username");
-    }
-    if (!user.password.trim("")) {
-      return CheckError("password");
-    }
+    try {
+      if (!user.email.trim("")) {
+        return CheckError("username");
+      }
+      if (!user.password.trim("")) {
+        return CheckError("password");
+      }
 
-    let { data } = await axios.post("https://cairn.azurewebsites.net/login", {
-      username: user?.email,
-      password: user?.password,
-    });
-    if (data?.message === "Login successful.") {
-      setIsLoggedIn(true);
-      localStorage.setItem("cairn_isLoggedIn", true);
-      localStorage.setItem("cairn_user", user.email);
-      setUser({
-        email: "",
-        password: "",
+      let { data } = await axios.post("https://cairn.azurewebsites.net/login", {
+        username: user?.email,
+        password: user?.password,
       });
-    } else {
-      setError({
-        visible: true,
-        message: "Invalid credentials !",
-      });
-      setTimeout(() => {
-        setError({
-          visible: false,
-          message: "",
+      if (data?.message === "Login successful.") {
+        setIsLoggedIn(true);
+        localStorage.setItem("cairn_isLoggedIn", true);
+        localStorage.setItem("cairn_user", user.email);
+        setUser({
+          email: "",
+          password: "",
         });
-      }, 2000);
+      } else {
+        alert("In else");
+        CheckError();
+      }
+    } catch (e) {
+      console.log(e.message);
+      CheckError(e.message);
     }
     // var data = JSON.stringify({
     //   username: user?.email,
