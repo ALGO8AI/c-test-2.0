@@ -41,6 +41,8 @@ function App() {
   });
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [captcha, setCaptcha] = useState("");
+  const [enterCaptcha, setEnterCaptcha] = useState("");
 
   const [currentTab, setCurrrentTab] = useState("Home");
 
@@ -54,11 +56,11 @@ function App() {
       "http://40.81.238.141:3000/embed/dashboard/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZSI6eyJkYXNoYm9hcmQiOjN9LCJwYXJhbXMiOnt9LCJpYXQiOjE2Njg2MDU0Njh9.cRpfIWXaprvLQm-Mf-uJG0LfvDXSp2ej97YG_L_nUdQ#bordered&titled",
   };
 
-  const CheckError = (param = "Imvalid Cred") => {
+  const CheckError = (param = "Invalid Cred") => {
     if (!user[param]?.trim("")) {
       setError({
         visible: true,
-        message: `Please enter your ${param} !`,
+        message: `${param} !`,
       });
     }
 
@@ -73,10 +75,16 @@ function App() {
   const login = async () => {
     try {
       if (!user.email.trim("")) {
-        return CheckError("username");
+        return CheckError("Please enter your username");
       }
       if (!user.password.trim("")) {
-        return CheckError("password");
+        return CheckError("Please enter your password");
+      }
+      if (!enterCaptcha.trim("")) {
+        return CheckError("Please enter your Captcha Code");
+      }
+      if (captcha !== enterCaptcha) {
+        return CheckError("Invalid Captcha");
       }
 
       let { data } = await axios.post("https://cairn.azurewebsites.net/login", {
@@ -198,6 +206,10 @@ function App() {
           setError={setError}
           passwordVisible={passwordVisible}
           setPasswordVisible={setPasswordVisible}
+          captcha={captcha}
+          setCaptcha={setCaptcha}
+          enterCaptcha={enterCaptcha}
+          setEnterCaptcha={setEnterCaptcha}
         />
       ) : (
         // <div className={Styles.Iframe_Container}>

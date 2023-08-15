@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { algo, cairn } from "../../assets";
 import Styles from "./Login.module.scss";
 
@@ -9,7 +9,19 @@ function Login({
   error,
   passwordVisible,
   setPasswordVisible,
+  captcha,
+  setCaptcha,
+  enterCaptcha,
+  setEnterCaptcha,
 }) {
+  const generateCaptcha = useCallback(() => {
+    setCaptcha(Math.floor(Math.random() * 99999).toString());
+  }, []);
+
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
+
   return (
     <div className={Styles.Login_Container}>
       <div className={Styles.Left}>
@@ -63,6 +75,39 @@ function Login({
             />{" "}
             Show Password
           </label>
+
+          <div className={Styles.Captcha}>
+            {captcha.split("").map((item, index) => (
+              <span
+                className={
+                  index === 2
+                    ? Styles.Rotate
+                    : index === 4
+                    ? Styles.Underline
+                    : Styles.Transform
+                }
+              >
+                {item}
+              </span>
+            ))}
+            <span
+              onClick={() => {
+                setCaptcha(Math.floor(Math.random() * 99999).toString());
+                setEnterCaptcha("");
+              }}
+              style={{
+                marginLeft: "1rem",
+                cursor: "pointer",
+              }}
+            >
+              🔃
+            </span>
+            <input
+              placeholder="Enter Captcha"
+              value={enterCaptcha}
+              onChange={(e) => setEnterCaptcha(e.target.value)}
+            />
+          </div>
           {error?.visible && (
             <div className={Styles.Error}>
               <p>{error?.message}</p>
