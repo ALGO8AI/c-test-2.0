@@ -35,6 +35,7 @@ function Login({
               placeholder="Username"
               value={user.email}
               onChange={(e) => setUser({ ...user, email: e.target.value })}
+              autoComplete="false"
             />
           </label>
           <label>
@@ -44,6 +45,7 @@ function Login({
               placeholder="Password"
               value={user.password}
               onChange={(e) => setUser({ ...user, password: e.target.value })}
+              autoComplete="false"
             />
           </label>
           <label
