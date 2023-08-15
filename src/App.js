@@ -3,7 +3,8 @@ import Styles from "./App.module.scss";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
-import axios from "axios";
+import axios from "./Utils/Axios";
+// import axios from "axios";
 
 const USERS = [
   {
@@ -90,6 +91,10 @@ function App() {
           email: "",
           password: "",
         });
+        let resp = await axios.get(
+          "https://cairn.azurewebsites.net/set-cookie"
+        );
+        console.log("Cookie Resp", resp);
       } else {
         alert("In else");
         CheckError();
