@@ -11,7 +11,7 @@ root.render(
       <meta
         http-equiv="Strict-Transport-Security"
         content="max-age=31536000; includeSubDomains"
-      />
+      /> 
       <meta http-equiv="X-Content-Type-Options" content="nosniff" />
       <meta name="referrer" content="same-origin" />
       {/* permission policy */}
